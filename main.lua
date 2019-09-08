@@ -56,25 +56,31 @@ local facts = {
   "Chuck Norris punched a hole in a Tauren, just to see who was coming down the road.",
   "Chuck Norris knows why the leaves fall.",
   }
+
 addonEnabled = true;
-function SayFact()
-  channels =  GetChannelList();
 
+function SayFact(chat, channel)
   local fact = facts[ math.random( #facts ) ]
-
-  SendChatMessage(fact, nil , nil, 1);
+  SendChatMessage(fact, chat , nil, channel);
 end
 
 
 SLASH_CN1 = "/chucknorris"
 SLASH_CN2 = "/cn"
 SLASH_CN3 = "/chuck"
-SlashCmdList["CN"] = function(arg)
-  if (arg == 'h')
-  print("Hello, WoW!")
-  print(arg)
-  SayFact()
+
+SlashCmdList["CN"] = function(chat)
+  if (chat == '1') or (chat:lower() == 'general') then
+    SayFact("CHANNEL", 1)
+  elseif (chat:lower() == "trade") or (chat:lower() == "2") then
+    SayFact("CHANNEL", 2)
+  elseif (chat:lower() == "guild") or (chat:lower() == "g") then
+    SayFact("GUILD", nil)
+  elseif (chat:lower() == "party") or (chat:lower() == "p") then
+    SayFact("PARTY", nil)
+  else
+    SayFact(nil,nil)
+  end
 end
 
-message('Hello Chuck Norris')
-SayFact()
+message("You Have Subscribed to Chuck Norris Facts\n type '/cn' to /say a fact \n '/cn g' or '/cn guild' for guild\n'/cn 1 for general chat'\n'/cn 2' for trade")

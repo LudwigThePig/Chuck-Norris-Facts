@@ -1,1 +1,3 @@
-message('Hello Chuck Norris')
+channels =  GetChannelList();
+
+/script SendChatMessage(msg, nil , nil,"channel");

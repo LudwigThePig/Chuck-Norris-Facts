@@ -1,0 +1,14 @@
+<Script file="main.lua"/> 
+<Frame name="Chuck Norris Facts"> 
+  <Scripts> 
+      <OnLoad> 
+          Chuck_OnLoad();
+      </OnLoad>
+  </Scripts>
+   <!-- <Button inherits="UIPanelButtonTemplate" text="Fact">
+     <Size x="150" y="60"/>
+     <Anchors><Anchor point="BOTTOM"/></Anchors>
+     <OnClick>SayFact();</OnClick>
+     <NormalFont style="GameFontNormalHuge"/>
+   </Button> -->
+</Frame>

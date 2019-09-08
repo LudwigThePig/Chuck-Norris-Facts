@@ -3,7 +3,7 @@ This is a WoW addon that generates a random Chuck Norris fact and broadcasts it 
 
 ## How to Use
 ```sh
-/chucknorris or /cn to /say a Chuck Norris fact.
+'/chucknorris' or '/cn' to /say a Chuck Norris fact.
 '/cn party' or '/cn p' to broadcast to party chat
 '/cn guild' or '/cn g' to broadcast to guild chat
 '/cn general' or '/cn 1' to broadcast to general chat
